@@ -1,0 +1,863 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply w-[97%] lg:w-[94%] mx-auto;
+}
+
+:root {
+  font-family: 'Inter Tight', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 16px;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --pryColor: #075dc1;
+  --bgPryColor: #023f88;
+  --pryDark: #25015b;
+  --white: #fff;
+  --black: #000;
+  --Grey1: #525252;
+  --Grey2: #707070;
+  --Grey3: #bdc0ce;
+  --Grey4: #f3f4f8;
+  --Grey5: #bcbcbd;
+  --Grey6: #7e8494;
+  --Line: #ced4da;
+  --rated: #ebc351;
+  --positive: #20af0b;
+  --negative: #ff3b2d;
+  --receiver: #eeeff2;
+  --sender: #3b70fb;
+  --lightPryColor: #daacf9;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+a:hover {
+  color: inherit;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  max-width: 1800px;
+  font-family: 'Inter Tight', sans-serif;
+  color: var(--black);
+  background: #fff;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.App {
+  width: 100%;
+}
+
+.line {
+  border: solid 1px var(--Grey4);
+}
+
+.border {
+  border-color: var(--Grey4);
+}
+
+.hLine {
+  height: 1px;
+  background: var(--Grey4);
+}
+
+.card {
+  border: solid 1px var(--Line);
+  border-radius: 8px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+img {
+  width: 100% !important;
+  height: auto;
+}
+
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small {
+  margin: 0;
+  padding: 0;
+  color: var(--black);
+}
+
+h1,
+h2 {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+em {
+  color: var(--negative);
+  font-size: inherit;
+}
+
+.zoomImg {
+  transition: transform 0.4s ease-in-out;
+}
+
+.zoomImg:hover {
+  transform: scale(1.1);
+}
+
+/* ==== General Styles Start ==== */
+
+.form-switch .form-check-input:checked {
+  background-color: var(--pryColor);
+  border-color: var(--pryColor);
+  width: 3.5em;
+  height: 2em;
+}
+
+.form-switch .form-check-input {
+  background-color: var(--Grey4);
+  width: 3.5em;
+  height: 2em;
+}
+
+.emptyState > h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--Grey1);
+}
+
+.emptyState p {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--Grey2);
+}
+
+.form-controls {
+  display: block;
+  width: 100%;
+  padding: 0.77em 1em;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid var(--Line);
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+select {
+  appearance: none;
+  -ms-progress-appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: url('./assets/selectIcon.svg') no-repeat;
+  background-position: 95% 50%;
+}
+
+/* ===Dashboard title start=== */
+
+.chatActive,
+.chatNotActive {
+  padding: 0.6em 0.8em;
+  transition: all 0.6s ease-in-out;
+}
+.chatActive {
+  padding: 0.6em 0.8em;
+  background: #f9f9fa;
+  transition: all 0.6s ease-in-out;
+  border-left: solid 2.5px var(--pryColor);
+}
+.chatNotActive {
+  background: transparent;
+  border: none;
+}
+
+.sidebarActive,
+.sidebarNotActive {
+  padding: 0.6em;
+  transition: all 0.6s ease-in-out;
+}
+
+.sidebarActive h4,
+.sidebarNotActive h4 {
+  font-size: 1rem;
+}
+
+.sidebarActive {
+  border-radius: 10px;
+  background: var(--pryColor);
+  color: var(--white);
+}
+
+.sidebarActive h4 {
+  color: var(--white);
+}
+
+.sidebarActive [stroke] {
+  stroke: var(--white);
+}
+.sidebarActive svg [fill] {
+  fill: var(--white);
+}
+
+.sidebarNotActive h4 {
+  color: var(--white);
+}
+
+.sidebarNotActive {
+  color: var(--white);
+}
+
+.sidebarNotActive [stroke] {
+  stroke: var(--white);
+}
+/* ===Dashboard title end=== */
+
+.small {
+  font-size: 1rem;
+  color: var(--Grey3);
+  font-weight: 500;
+}
+
+/* ====Btns==== */
+
+.main-btn {
+  background: var(--pryColor);
+  border-radius: 48px;
+  padding: 0.6em 2em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.sec-btn {
+  background: var(--secColor);
+  border-radius: 48px;
+  padding: 0.6em 2em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.sec-outline {
+  background: transparent;
+  border: solid 1px var(--secColor);
+
+  border-radius: 48px;
+  padding: 0.6em 2em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--secColor);
+}
+
+.productUploadBtn {
+  background: transparent;
+  border: solid 1.5px var(--bgPryColor);
+  border-radius: 2px;
+  padding: 0.4em 1.3em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--pryColor) !important;
+}
+
+.outline-btn {
+  border: solid 1px var(--pryColor);
+  border-radius: 48px;
+  padding: 0.6em 2em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--pryColor);
+}
+
+.negative-btn {
+  border: solid 1px var(--negative);
+  border-radius: 48px;
+  padding: 0.6em 2em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--negative);
+}
+
+.positive-btn {
+  border: solid 1px var(--positive);
+  border-radius: 48px;
+  padding: 0.6em 2em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--positive);
+}
+
+.outline-dark {
+  border: solid 1px var(--Grey3);
+  border-radius: 48px;
+  padding: 0.6em 2em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.main-btn.disabled,
+.main-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.deleteIcon {
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  display: grid;
+  place-items: center;
+  background-color: var(--negative);
+  color: var(--white);
+  /* padding: 0.5em; */
+  cursor: pointer;
+}
+
+/* ====Btns==== */
+
+/* ====Uploads Files=== */
+
+.uploadInp {
+  display: none;
+}
+
+.uploadType {
+  font-size: 0.6rem;
+  color: var(--Grey2);
+  font-weight: 500;
+}
+
+/* ====Uploads Files=== */
+
+.errors {
+  border: solid var(--negative) 1px !important;
+}
+
+.error_message {
+  color: var(--negative);
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.positive {
+  color: var(--positive);
+}
+
+.form-controls:disabled {
+  opacity: 0.3 !important;
+}
+
+.rated {
+  color: var(--rated);
+  cursor: pointer;
+}
+
+.noRating {
+  color: var(--Grey3);
+  cursor: pointer;
+}
+
+.noRating:hover {
+  color: var(--rated);
+}
+
+/* ==== General Styles End==== */
+
+/* ==== Dashboard Inner taabs header start==== */
+
+.search {
+  position: relative;
+}
+
+.search input {
+  display: flex;
+  padding: 0.77em 1em !important;
+  padding-left: 3rem !important;
+  border: 1px solid #e5e7ef;
+  border-radius: 7px;
+}
+
+.searchIcon {
+  position: absolute;
+  font-size: 1.5rem;
+  left: 2%;
+  color: var(--Grey6);
+}
+/* ===Main tab class start === */
+
+.tabContents {
+  margin-top: 1em;
+}
+
+.tabTitle {
+  cursor: pointer;
+}
+
+.tabTitle h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.active {
+  color: var(--pryColor);
+  background: var(--white);
+  border-radius: 8px;
+}
+
+.active,
+.notActive {
+  padding: 0.6em 1em;
+}
+
+.active h4,
+.notActive h4 {
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--Grey1);
+  cursor: pointer;
+}
+
+/* ====SETTINGS TAB===== */
+
+.settingsActive,
+.settingsNotActive {
+  padding: 0.6em 1em;
+  cursor: pointer;
+}
+
+.settingsActive h4,
+.settingsNotActive h4 {
+  font-size: 0.85rem;
+  color: var(--Grey1);
+}
+
+.settingsActive h4,
+.settingsNotActive h4 {
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--Grey1);
+  cursor: pointer;
+}
+
+.settingsActive span {
+  background: #17813c1a;
+}
+
+.settingsActive h4 {
+  font-weight: 700;
+  color: var(--black);
+}
+
+.settingsActive svg {
+  fill: #17813c;
+}
+.settingsNotActive svg {
+  fill: #525252;
+}
+
+.settingsNotActive span {
+  background: #eff0f3;
+}
+
+/* ====SETTINGS TAB===== */
+
+.activeTab,
+.notActiveTab {
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.activeTab {
+  border-radius: 8px;
+  background: color-mix(in sRGB, var(--secColor) 10%, transparent 90%);
+}
+
+.activeTab h4 {
+  color: var(--secColor);
+  font-weight: 700;
+}
+
+.notActiveTab h4 {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 900px) {
+  .activeTab,
+  .notActiveTab {
+    padding: 0.5em 0.4em;
+  }
+}
+
+/* ===Main tab class end=== */
+
+.provider,
+.patient,
+.staff,
+.dentist {
+  border-radius: 15px;
+  min-height: 150px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  cursor: pointer;
+}
+
+.provider {
+  background: url('./assets/doctype1.png') top left no-repeat;
+  background-size: cover;
+}
+.patient {
+  background: url('./assets/doctype2.png') top left no-repeat;
+  background-size: cover;
+}
+.staff {
+  background: url('./assets/doctype3.png') top left no-repeat;
+  background-size: cover;
+}
+.dentist {
+  background: url('./assets/doctype4.png') top left no-repeat;
+  background-size: cover;
+}
+
+hr {
+  color: var(--Grey1);
+  margin: 0;
+}
+
+.close {
+  width: 30px;
+  height: 30px;
+  background: color-mix(in srgb, var(--negative) 20%, transparent 80%);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--negative);
+}
+
+/* ====Inputs Starts==== */
+
+input::placeholder {
+  font-size: 13px;
+  font-weight: 200;
+  color: var(--Grey6) !important;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  width: 1.5em;
+  height: 1.5em;
+  border: solid 1px var(--Grey2);
+}
+
+input:checked[type='radio'],
+input[type='checkbox'] {
+  width: 1.5em;
+  height: 1.5em;
+  border: solid 1px var(--Grey2);
+  background-color: var(--pryColor);
+}
+
+textarea:focus,
+select:focus,
+input:focus {
+  border: solid 2.1px var(--bgPryColor);
+  outline: 0;
+  border-radius: 8px;
+}
+
+.react-tel-input .form-control {
+  border: 1px solid #ced4da;
+  width: 100% !important;
+  height: unset !important;
+}
+
+/* ====Inputs End ==== */
+
+.popUpMenu {
+  border-radius: 5px;
+  padding: 0.7em 1.5em;
+  background: var(--white);
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.16);
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  width: 20%;
+  z-index: 5;
+}
+
+.popUpMenu .moreItems {
+  font-size: 0.8rem;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: solid 1px var(--Grey5);
+  cursor: pointer;
+  color: var(--black);
+}
+
+.popUpMenu .moreItems:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: solid 0px var(--Grey5);
+  color: var(--negative);
+}
+
+.rated {
+  color: var(--rated);
+  cursor: pointer;
+}
+
+.noRating {
+  color: var(--Grey3);
+  cursor: pointer;
+}
+
+.noRating:hover {
+  color: var(--rated);
+}
+
+.emptyStateContainer {
+  display: flex;
+  place-content: center;
+  border: solid 1px var(--Line);
+  border-radius: 8px;
+  padding: 5em 2em;
+}
+
+.yLine {
+  border-left: 1px solid var(--Grey5);
+  height: 100vh;
+}
+
+.messageAvatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.side {
+  border-right: solid 1px var(--Grey5);
+}
+
+.border-bottom,
+.border-top {
+  border-color: var(--Grey5) !important;
+}
+
+.messageMe {
+  border: solid 1px var(--pryColor);
+  border-radius: 50%;
+  color: var(--pryColor);
+}
+
+.labelTitle {
+  font-size: 0.875rem;
+  color: var(--Grey1);
+  margin-bottom: 0.3em;
+  font-weight: 500;
+}
+
+/* Input with icons init */
+.inputContainer {
+  position: relative;
+  .icon {
+    position: absolute;
+    right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin: 0;
+    color: var(--Grey3);
+  }
+}
+
+.star {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* === Pagination styles start ==== */
+.paginContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-weight: 700;
+}
+
+.paginContainer a {
+  display: block;
+  width: 2.5em;
+  height: 2.5em;
+  border: 1px solid var(--Grey3);
+  color: var(--Grey3);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginContainer a:hover {
+  background-color: var(--white);
+}
+
+.paginContainer .activePage a {
+  border: 1px solid var(--pryColor);
+  color: var(--pryColor);
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.paginContainer .disabled a {
+  pointer-events: none;
+  background-color: grey; /* Adjust the color for the disabled state */
+  border: 1px solid lightgrey; /* Adjust the border color for the disabled state */
+}
+
+/* === Pagination styles end ==== */
+.moreItems {
+  display: flex;
+  gap: 0.6em;
+  background: var(--white);
+  border-radius: 9px;
+  padding: 0.5em 1em;
+  margin: 0.4em;
+  box-shadow: 0px 0px 5px 0px #00000033;
+  cursor: pointer;
+}
+
+.revList {
+  border-bottom: solid 1px var(--Line);
+}
+
+.tags {
+  border: solid 1px var(--Grey6);
+  background: var(--Grey4);
+  padding: 0.3em 0.7em;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.ant-picker-input input {
+  margin: 0 !important;
+}
+/* ==== Dashboard Inner taabs header End==== */
+
+.activePayMethod {
+  border: solid 2px var(--secColor);
+  border-radius: 12px;
+  padding: 0.8em 1.5em;
+  cursor: pointer;
+}
+
+.activePayMethod h4 {
+  color: var(--secColor);
+}
+
+.notActivePayMethod {
+  border: solid 2px var(--Grey6);
+  border-radius: 12px;
+  padding: 0.8em 1.5em;
+  cursor: pointer;
+}
+
+.inputWrapper {
+  width: 100%;
+}
+
+.inputWrapper small {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 500px) {
+  .inputWrapper {
+    width: 48%;
+  }
+}
+
+label {
+  font-size: 0.875rem;
+  color: var(--Grey1);
+  margin-bottom: 0.3em;
+  font-weight: 500;
+}
+
+.priceInput input {
+  margin: 0 !important;
+  /* padding: 0 !important; */
+}
+@media screen and (max-width: 900px) {
+  h1,
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}

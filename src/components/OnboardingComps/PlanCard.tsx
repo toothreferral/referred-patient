@@ -1,0 +1,101 @@
+import { FC } from 'react';
+
+interface IPlan {
+  planTitle: string;
+  monthlyPay: number;
+  yearlyPay: number;
+  description1: string;
+  description2: string;
+  description3: string;
+  description4: string;
+  description5: string;
+  className?: string;
+  settings?: boolean;
+}
+
+const PlanCard: FC<IPlan> = ({
+  planTitle,
+  monthlyPay,
+  yearlyPay,
+  description1,
+  description2,
+  description3,
+  description4,
+  description5,
+  className,
+  settings,
+}) => {
+  return (
+    <>
+      {settings ? (
+        <section className='rounded-lg border-Grey5  bg-white overflow-hidden'>
+          <hgroup className={`${className} bg-[#6B7280] text-center  py-3`}>
+            <h4 className='text-base font-medium text-white'>{planTitle}</h4>
+          </hgroup>
+          <div className='px-5 py-8'>
+            <hgroup className='text-center font-bold'>
+              {monthlyPay && (
+                <h3 className='font-bold'>
+                  {' '}
+                  ${monthlyPay.toFixed(2)}
+                  <span className='text-xs text-Grey5'>/month</span>{' '}
+                </h3>
+              )}
+
+              {yearlyPay && (
+                <h4 className='font-semibold'>
+                  ${yearlyPay.toFixed(2)}
+                  <span className='text-xs '>/yr </span>
+                </h4>
+              )}
+            </hgroup>
+
+            <ul className='mt-5 list-disc text-Grey1 pl-9'>
+              <li>{description1} </li>
+              <li>{description2} </li>
+              <li>{description3} </li>
+              <li>{description4} </li>
+              <li>{description5} </li>
+            </ul>
+          </div>
+        </section>
+      ) : (
+        <section className='rounded-lg bg-[#F0F0F0] p-5 w-full'>
+          <article className='rounded-lg border-Grey5 bg-white overflow-hidden'>
+            <hgroup className={` bg-[#6B7280] text-center  py-3`}>
+              <h4 className='text-base font-medium text-white'>{planTitle}</h4>
+            </hgroup>
+            <div className='px-5 py-8'>
+              <hgroup className='text-center font-bold'>
+                {monthlyPay && (
+                  <h3 className='font-bold'>
+                    {' '}
+                    ${monthlyPay.toFixed(2)}
+                    <span className='text-xs text-Grey5'>/month</span>{' '}
+                  </h3>
+                )}
+
+                {yearlyPay && (
+                  <h4 className='font-semibold'>
+                    ${yearlyPay.toFixed(2)}
+                    <span className='text-xs '>/yr </span>
+                  </h4>
+                )}
+              </hgroup>
+
+              <ul className='mt-5 list-disc text-Grey1 pl-9'>
+                <li>{description1} </li>
+                <li>{description2} </li>
+                <li>{description3} </li>
+                <li>{description4} </li>
+                <li>{description5} </li>
+              </ul>
+            </div>
+          </article>
+        </section>
+      )}
+    </>
+  );
+};
+
+export default PlanCard;

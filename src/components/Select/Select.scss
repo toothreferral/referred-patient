@@ -1,0 +1,39 @@
+.custom-select {
+  position: relative;
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.16);
+    z-index: 1;
+    border-radius: 12px;
+    border: solid 1px var(--Grey4);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 50vh;
+  }
+
+  .option {
+    padding: 1em 2em;
+    cursor: pointer;
+    font-weight: 600;
+
+    svg [stroke] {
+      stroke: var(--Grey6) !important;
+    }
+  }
+
+  .option:hover {
+    color: var(--pryColor);
+    background-color: color-mix(in sRGB, transparent 90%, var(--pryColor) 10%);
+
+    svg [stroke] {
+      stroke: var(--pryColor) !important;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.rbc-calendar {
+  color: var(--Grey1);
+
+  .rbc-btn-group {
+    border-radius: 30px;
+    overflow: hidden;
+    background: var(--white);
+    border: solid 1px var(--Line) !important;
+    font-weight: 600;
+
+    .rbc-active {
+      background: transparent !important;
+      color: var(--black);
+    }
+
+    button {
+      border: none !important;
+      border-right: solid 1px var(--Line) !important;
+      color: var(--Grey6);
+    }
+  }
+
+  .rbc-date-cell {
+    text-align: center !important;
+  }
+}
