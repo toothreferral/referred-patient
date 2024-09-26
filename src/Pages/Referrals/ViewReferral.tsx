@@ -6,7 +6,6 @@ import { AiOutlineMessage } from 'react-icons/ai';
 import a1 from '@/assets/doc2.png';
 import b1 from '@/assets/doc3.png';
 import c1 from '@/assets/doc4.png';
-import { RxDownload } from 'react-icons/rx';
 import GoBackBtn from '@/components/GoBackBtn';
 const ViewReferral = () => {
   return (
@@ -15,17 +14,6 @@ const ViewReferral = () => {
         <div>
           <GoBackBtn />
           <h5 className='font-bold mt-3'>View Referral</h5>
-        </div>
-        <div className='flex gap-2'>
-          <button className='outline-btn w-full md:w-fit flex items-center gap-2'>
-            <RxDownload /> Download PDF
-          </button>
-          <button className='outline-dark w-full md:w-fit !border-Grey6 !text-Grey6 !bg-[#F0F0F0]'>
-            Decline Referral
-          </button>
-          <button className='main-btn w-full md:w-fit' type='button'>
-            Submit Referral
-          </button>
         </div>
       </section>
       <hr className='my-5' />

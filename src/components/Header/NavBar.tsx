@@ -22,14 +22,6 @@ const NavBar = () => {
       <header className='  w-full flex container justify-between items-center'>
         <div className='flex items-center gap-8 '>
           <h3>{name}</h3>
-          {pathname === '/referrals' && (
-            <button
-              onClick={() => handleShow('ref')}
-              className='main-btn flex items-center gap-2 '
-            >
-              New Referral {toggle['ref'] ? <FaChevronUp /> : <FaChevronDown />}
-            </button>
-          )}
         </div>
 
         <div className='flex items-center gap-2 cursor-pointer'>

@@ -24,6 +24,7 @@ import { BsEyeFill, BsTrash3 } from 'react-icons/bs';
 import Received from './DashboardComps/ReferralComps/Received';
 import { Link } from 'react-router-dom';
 import {
+  ChangeDoc,
   ChatsIcon,
   ContactSupportIcon,
   GroupChatIcon,
@@ -573,26 +574,12 @@ export const docsData = [
 
 export const refColData: IColData[] = [
   {
-    name: 'Patient Name',
-    selector: ({ name }: { name: string }) => name,
-    grow: 1.5,
-    cell: ({ imgUrl, name }) => (
-      <div className='flex items-center gap-5'>
-        <figure className='h-8 w-8 overflow-hidden rounded-full'>
-          <img src={imgUrl} alt={name} />
-        </figure>
-        <span>{name}</span>
-      </div>
-    ),
-  },
-  {
-    name: 'Patient Email',
-    selector: ({ email }: { email: string }) => email,
-  },
-  {
-    name: 'Referral Doctor',
+    name: 'Referred Doctor',
     selector: ({ refDoc }: { refDoc: string }) => refDoc,
-    grow: 1.5,
+  },
+  {
+    name: 'Doctor Email',
+    selector: ({ email }: { email: string }) => email,
   },
   {
     name: 'Hospital',
@@ -614,13 +601,22 @@ export const refColData: IColData[] = [
   },
   {
     name: 'Action',
+    grow: 1.4,
     cell: ({ id }) => (
-      <Link
-        to={`/referrals/view/${id}`}
-        className='rounded-3xl py-1 px-2 flex items-center gap-2 bg-[#075DC11A] text-pryColor'
-      >
-        <BsEyeFill /> View
-      </Link>
+      <div className='flex items-center gap-2'>
+        <Link
+          to={`/referrals/view/${id}`}
+          className='rounded-3xl py-1 px-2 flex items-center gap-2 bg-[#075DC11A] text-pryColor'
+        >
+          <BsEyeFill /> View
+        </Link>
+        <Link
+          to={`/referrals/view/${id}`}
+          className='rounded-3xl py-1 px-2 flex items-center gap-2 bg-[#17813C1A] text-positive'
+        >
+          <ChangeDoc /> Change Dentist
+        </Link>
+      </div>
     ),
   },
 ];
@@ -634,23 +630,14 @@ export const refPageData = {
 
     {
       id: 'tab2',
-      title: 'Reffered out',
+      title: 'Referral Changed',
     },
     {
       id: 'tab3',
-      title: 'Unable to Contact',
-    },
-
-    {
-      id: 'tab4',
-      title: 'Declined',
-    },
-    {
-      id: 'tab5',
       title: 'Scheduled',
     },
     {
-      id: 'tab6',
+      id: 'tab4',
       title: 'Completed',
     },
   ],
@@ -660,8 +647,6 @@ export const refPageData = {
     { id: 'tab2', comp: <Received /> },
     { id: 'tab3', comp: <Received /> },
     { id: 'tab4', comp: <Received /> },
-    { id: 'tab5', comp: <Received /> },
-    { id: 'tab6', comp: <Received /> },
   ],
 };
 
