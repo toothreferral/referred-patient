@@ -54,7 +54,9 @@ const MessagingInput = ({
           className='form-controls !pl-10'
           onChange={(e) => setNewMessage(e.target.value)}
           onKeyUp={(e) => {
-            e.key === 'Enter' && sendMessage();
+            if (e.key === 'Enter') {
+              sendMessage();
+            }
           }}
           rows={1}
         />

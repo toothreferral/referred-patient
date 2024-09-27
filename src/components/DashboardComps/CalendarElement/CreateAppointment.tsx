@@ -47,7 +47,9 @@ const CreateAppointment: FC<
     };
 
     // Update the state with the new event data
-    setData && setData(updatedEvent);
+    if (setData) {
+      setData(updatedEvent);
+    }
     handleShow(id);
   };
 

@@ -28,21 +28,15 @@ import {
   ChatsIcon,
   ContactSupportIcon,
   GroupChatIcon,
-  InhousePlanIcon,
-  OfficeInfoIcon,
-  PatientsChatIcon,
   PersonalInfoIcon,
-  PracticeInfoIcon,
   ReferIcon,
   SecurityIcon,
-  UserRoleIcon,
 } from '@/SVGs/CustomSVGs';
 import Pending from './DashboardComps/AppointmentComp/Pending';
 import { MdCancel } from 'react-icons/md';
 import { ImCheckboxChecked } from 'react-icons/im';
 import Chats from './DashboardComps/MessagingComps/Chats';
 import Groups from './DashboardComps/MessagingComps/Groups';
-import PatientsChats from './DashboardComps/MessagingComps/PatientsChats';
 import Yearly from './DashboardComps/Plans/Yearly';
 import Monthly from './DashboardComps/Plans/Monthly';
 import { CiEdit } from 'react-icons/ci';
