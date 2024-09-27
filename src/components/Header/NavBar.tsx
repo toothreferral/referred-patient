@@ -4,18 +4,16 @@ import userIcon from '@/assets/noAvatar.png';
 import Modal from '../popUps/Modal';
 import { useAppSelector } from '@/Redux/reduxHooks';
 import { selectGlobal, selectPageName } from '@/Redux/Features/globalSlice';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown } from 'react-icons/fa';
 import UserCard from './UserCard';
 import { useGlobalHooks } from '@/Hooks/globalHooks';
 import { NotifIcon } from '@/SVGs/CustomSVGs';
-import { useLocation } from 'react-router-dom';
 import CreateReferralModal from '../DashboardComps/ReferralComps/CreateReferralModal';
 
 const NavBar = () => {
   const { handleShow } = useGlobalHooks();
   const toggle = useAppSelector(selectGlobal);
   const name = useAppSelector(selectPageName);
-  const { pathname } = useLocation();
 
   return (
     <main className='navbar flex items-center '>

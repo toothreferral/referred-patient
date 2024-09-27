@@ -40,7 +40,7 @@ const Received = () => {
 
   return (
     <section className='relative card !border-[1px] !border-[#E5E7EB] py-4'>
-      <div className='container'>
+      <div className='container mb-3'>
         <Search
           placeholder='Search for patients'
           className='w-full lg:w-5/12'

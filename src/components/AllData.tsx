@@ -589,6 +589,7 @@ export const refColData: IColData[] = [
   {
     name: 'Status',
     selector: ({ status }: { status: string }) => status,
+    width: '100px',
     cell: ({ status }: { status: string }) => (
       <span
         className={`${
@@ -611,7 +612,7 @@ export const refColData: IColData[] = [
           <BsEyeFill /> View
         </Link>
         <Link
-          to={`/referrals/view/${id}`}
+          to={`/referrals/change-dentist/${id}`}
           className='rounded-3xl py-1 px-2 flex items-center gap-2 bg-[#17813C1A] text-positive'
         >
           <ChangeDoc /> Change Dentist
@@ -990,7 +991,7 @@ export const appointmentColData: IColData[] = [
   {
     name: 'Full Name',
     selector: ({ name }: { name: string }) => name,
-    grow: 2,
+    grow: 1.8,
     cell: ({ imgUrl, name }) => (
       <div className='flex items-center gap-5'>
         <figure className='h-8 w-8 overflow-hidden rounded-full'>
@@ -1003,32 +1004,35 @@ export const appointmentColData: IColData[] = [
   {
     name: 'Time',
     selector: ({ time }: { time: string }) => time,
-    width: '100px',
+    width: '70px',
   },
   {
     name: 'Date',
     selector: ({ date }: { date: string }) => date,
-    width: '100px',
+    width: '90px',
   },
   {
     name: 'Reason',
     selector: ({ reason }: { reason: string }) => reason,
-    grow: 2,
+    grow: 1.8,
   },
 
   {
     name: 'Action',
-    grow: 3,
+    grow: 5,
     cell: ({ id }) => (
-      <div className='flex items-center gap-3'>
+      <div className='flex items-center gap-2'>
         <Link
           to={`/appointments/view/${id}`}
-          className='rounded-3xl py-2 px-3 flex items-center gap-1 bg-[#075DC11A] text-pryColor'
+          className='rounded-3xl py-2 px-2.5 flex items-center gap-1 bg-[#075DC11A] text-pryColor'
         >
           <BsEyeFill /> View
         </Link>
         <button className='rounded-3xl py-2 px-3 flex items-center gap-1 bg-[#17813C1A] text-positive'>
           <ImCheckboxChecked /> Approve
+        </button>
+        <button className='rounded-3xl py-2 px-3 flex items-center gap-1 bg-[#6B72801A] text-[#6B7280]'>
+          <ImCheckboxChecked /> Referred out
         </button>
         <button className='rounded-3xl py-2 px-3 flex items-center gap-1 bg-[#FF3A441A] text-negative'>
           <MdCancel /> Decline
@@ -1158,17 +1162,11 @@ export const msgTypeData = {
       title: 'Groups',
       icon: <GroupChatIcon />,
     },
-    {
-      id: 'tab3',
-      title: 'Patients',
-      icon: <PatientsChatIcon />,
-    },
   ],
 
   TabContents: [
     { id: 'tab1', comp: <Chats /> },
     { id: 'tab2', comp: <Groups /> },
-    { id: 'tab3', comp: <PatientsChats /> },
   ],
 };
 
@@ -1447,31 +1445,11 @@ export const settingsPageData = {
     },
 
     {
-      id: 'tab2',
-      title: 'Practice Information',
-      icon: <PracticeInfoIcon />,
-    },
-    {
-      id: 'tab3',
-      title: 'Office Information',
-      icon: <OfficeInfoIcon />,
-    },
-    {
-      id: 'tab4',
-      title: 'In House Dental Plan',
-      icon: <InhousePlanIcon />,
-    },
-
-    {
       id: 'tab5',
       title: 'Security',
       icon: <SecurityIcon />,
     },
-    {
-      id: 'tab6',
-      title: 'Users & Roles',
-      icon: <UserRoleIcon />,
-    },
+
     {
       id: 'tab7',
       title: 'Contact Support',

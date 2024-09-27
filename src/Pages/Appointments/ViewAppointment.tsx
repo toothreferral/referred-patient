@@ -1,80 +1,97 @@
 import GoBackBtn from '@/components/GoBackBtn';
-import doc1 from '@/assets/doc1.png';
 import { IoChatbubbleEllipsesOutline } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 
 const ViewAppointment = () => {
   return (
     <main className='pb-10'>
       <section className='container flex flex-wrap items-center justify-between gap-3 mt-8'>
-        <div>
-          <GoBackBtn />
-          <h5 className='font-bold mt-3'>Appointment details</h5>
-        </div>
+        <GoBackBtn />
       </section>
       <hr className='my-5' />
 
-      <section className='container'>
-        <div className='flex items-center gap-5'>
-          <figure className='h-8 w-8 overflow-hidden rounded-full'>
-            <img src={doc1} alt='John Brown' />
-          </figure>
-          <h5 className='font-semibold'>John Brown</h5>
-        </div>
+      <section className='container '>
+        <article className=' card overflow-hidden w-full lg:w-6/12 '>
+          <div className='flex items-center gap-5 bg-PaleSky py-2 px-4'>
+            <h5 className='font-semibold text-white'>Appointment Details</h5>
+          </div>
 
-        <ul className='flex flex-col gap-3 mt-7'>
-          <li className='flex items-center gap-4'>
-            <small className='text-Grey6 w-2/12'>Time</small>
-            <h5 className='font-medium w6/12'>12:00</h5>
-          </li>
-          <li className='flex items-center gap-4'>
-            <small className='text-Grey6 w-2/12'>Date</small>
-            <h5 className='font-medium w6/12'>7/19/24</h5>
-          </li>
-          <li className='flex items-center gap-4'>
-            <small className='text-Grey6 w-2/12'>Reason</small>
-            <h5 className='font-medium w6/12'>Scalling</h5>
-          </li>
-          <li className='flex items-center gap-4'>
-            <small className='text-Grey6 w-2/12'>Email</small>
-            <h5 className='font-medium w6/12'>johnbrown@yahoo.com</h5>
-          </li>
-        </ul>
+          <ul className='flex flex-wrap gap-3 py-5 px-4'>
+            <li className='flex flex-col gap-1 w-5/12'>
+              <small className='text-Grey6'>Time</small>
+              <h5 className='font-medium'>12:00</h5>
+            </li>
+            <li className='flex flex-col gap-1 w-5/12'>
+              <small className='text-Grey6'>Date</small>
+              <h5 className='font-medium'>7/19/24</h5>
+            </li>
+            <li className='flex flex-col gap-1 w-5/12'>
+              <small className='text-Grey6'>Reason</small>
+              <h5 className='font-medium'>Scalling</h5>
+            </li>
+            <li className='flex flex-col gap-1 w-5/12'>
+              <small className='text-Grey6'>Referral Details</small>
+              <Link to='#' className='font-medium text-pryColor'>
+                View Details{' '}
+              </Link>
+            </li>
+          </ul>
+        </article>
       </section>
-      <hgroup className='container mt-9'>
-        <h5 className='font-bold mt-3'>Patient details</h5>
-      </hgroup>
 
       <hr className='my-5' />
 
+      <section className='container '>
+        <article className=' card overflow-hidden w-full lg:w-6/12 '>
+          <div className='flex items-center gap-5 bg-PaleSky py-2 px-4'>
+            <h5 className='font-semibold text-white'>Referral Office</h5>
+          </div>
+
+          <ul className='flex flex-wrap gap-3 py-5 px-4'>
+            <li className='flex flex-col gap-1 w-5/12'>
+              <small className='text-Grey6'>Doctor</small>
+              <h5 className='font-medium'>Dr John Brown</h5>
+            </li>
+            <li className='flex flex-col gap-1 w-5/12'>
+              <small className='text-Grey6'>Telephone</small>
+              <h5 className='font-medium'>(603) 555-0123</h5>
+            </li>
+            <li className='flex flex-col gap-1 w-5/12'>
+              <small className='text-Grey6'>Office Name</small>
+              <h5 className='font-medium'>Healthplus dental</h5>
+            </li>
+            <li className='flex flex-col gap-1 w-5/12'>
+              <small className='text-Grey6'>Website</small>
+              <h5 className='font-medium'>www.healthplus.com</h5>
+            </li>
+            <li className='flex flex-col gap-1 w-5/12'>
+              <small className='text-Grey6'>Fax number</small>
+              <h5 className='font-medium'>(603) 555-0123</h5>
+            </li>
+            <li className='flex flex-col gap-1 w-5/12'>
+              <small className='text-Grey6'>Location</small>
+              <Link to='#' className='font-medium text-pryColor'>
+                View on map{' '}
+              </Link>
+            </li>
+            <li className='flex flex-col gap-1 flex-1'>
+              <small className='text-Grey6'>Address</small>
+              <h5 className='font-medium '>
+                651 N Broad St, Suite 201, Middletown, DE 19709
+              </h5>
+            </li>
+          </ul>
+        </article>
+      </section>
+
       <section className='container'>
-        <ul className='flex flex-col gap-3 mt-7'>
-          <li className='flex items-center gap-4'>
-            <small className='text-Grey6 w-2/12'>Date of birth</small>
-            <h5 className='font-medium '>10/19/1995</h5>
-          </li>
-          <li className='flex items-center gap-4'>
-            <small className='text-Grey6 w-2/12'>Gender</small>
-            <h5 className='font-medium '>Male</h5>
-          </li>
-          <li className='flex items-center gap-4'>
-            <small className='text-Grey6 w-2/12'>Phone</small>
-            <h5 className='font-medium '>(603) 555-0123</h5>
-          </li>
-          <li className='flex items-center gap-4'>
-            <small className='text-Grey6 w-2/12'>Email</small>
-            <h5 className='font-medium '>johnbrown@yahoo.com</h5>
-          </li>
-          <li className='flex items-center gap-4'>
-            <small className='text-Grey6 w-2/12'>Referral Details</small>
-            <h5 className='font-bold text-pryColor '>View Details</h5>
-          </li>
-        </ul>
-        <div className='card w-full md:w-3/12 h-20 flex justify-center items-center gap-5 mt-6'>
-          <h5 className='font-semibold'>Send a message</h5>{' '}
+        <div className='card w-full md:w-5/12 h-20 flex justify-center items-center gap-5 mt-6'>
+          <h5 className='font-semibold'>Send a message to Office Mnager </h5>{' '}
           <IoChatbubbleEllipsesOutline className='text-pryColor' />
         </div>
         <div className='flex items-center gap-5 mt-6'>
-          <button className='outline-dark'>Cancel</button>
+          <button className='outline-dark'>Decline</button>
+          <button className='outline-btn'>Reschedule</button>
           <button className='main-btn'>Approve</button>
         </div>
       </section>

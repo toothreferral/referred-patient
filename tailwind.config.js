@@ -14,6 +14,7 @@ export default {
         Grey4: '#F3F4F8',
         Grey5: '#bcbcbd',
         Grey6: '#7e8494',
+        PaleSky: '#6B7280',
         Line: '#e5e7ef',
         rated: '#be9122',
         positive: '#17813C',

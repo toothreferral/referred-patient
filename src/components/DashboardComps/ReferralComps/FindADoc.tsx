@@ -1,40 +1,26 @@
-import { FC, useState } from 'react';
-import { IStepForm } from '@/Interfaces/GlobalInterfaces';
+import { useState } from 'react';
+
 import Search from '@/components/Search';
-import FavouriteDocs from '../../FavouriteDocs';
+import FavouriteDocs from '../FavouriteDocs';
 import { docsData } from '@/components/AllData';
-import DoctorCard from '../../DoctorCard';
-import { useAppDispatch, useAppSelector } from '@/Redux/reduxHooks';
-import {
-  SelectReferralsStepperForms,
-  updateReferaalInfo,
-} from '@/Redux/Features/referralsSlice';
+import DoctorCard from '../DoctorCard';
+import { useNavigate } from 'react-router-dom';
 
-const FindADoc: FC<IStepForm> = ({ onNext }) => {
-  const { referralsInfo } = useAppSelector(SelectReferralsStepperForms);
-  const dispatch = useAppDispatch();
+const FindADoc = () => {
+  const navigate = useNavigate();
 
-  const [getId, setGetId] = useState<any>();
-  const [selected, setSelected] = useState<{ [key: string]: boolean }>(
-    referralsInfo && referralsInfo?.doctorId
-      ? { [referralsInfo?.doctorId]: true }
-      : {},
-  );
+  const [selected, setSelected] = useState<{ [key: string]: boolean }>({});
 
   const handleSelected = (id: string) => {
     setSelected((prev) => ({ [id]: !prev[id] }));
-    setGetId(id);
   };
 
   const handleNext = () => {
-    dispatch(updateReferaalInfo({ doctorId: getId }));
-    onNext();
+    navigate(-1);
   };
 
   return (
-    <main className=''>
-      <h4 className='mb-3'>Find a Dentist close to you</h4>
-      <hr />
+    <main className='container'>
       <header className='flex justify-between items-center gap-8 mt-8'>
         <div className='flex-1'>
           <p>Search</p>
@@ -105,16 +91,13 @@ const FindADoc: FC<IStepForm> = ({ onNext }) => {
       </ul>
 
       <article className='flex flex-wrap items-center justify-end gap-3 mt-8'>
-        {/* <button onClick={onPrevious} className='outline-dark w-full md:w-fit '>
-          Back
-        </button> */}
         <button
           disabled={Object.keys(selected).length === 0}
           className='main-btn w-full md:w-fit'
           type='submit'
           onClick={handleNext}
         >
-          Continue
+          Save
         </button>
       </article>
     </main>
