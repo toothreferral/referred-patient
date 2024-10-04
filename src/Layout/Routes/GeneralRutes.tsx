@@ -11,6 +11,7 @@ import SignupStepThree from '@/Pages/Auth/Signup/SignupStepThree';
 import VerifyEmail from '@/Pages/Auth/VerifyEmail';
 import Guest from '@/Pages/Guest/Guest';
 import ViewDentist from '@/Pages/Guest/ViewDentist';
+import BookASession from '@/Pages/Guest/BookASession';
 
 interface Route {
   path: string;
@@ -28,6 +29,7 @@ const generalRoutes: Route[] = [
   { path: '/reset-password', element: <ChangePassword /> },
   { path: '/guest/find-a-dentist', element: <Guest /> },
   { path: '/guest/find-a-dentist/view-dentis/:id', element: <ViewDentist /> },
+  { path: '/guest/find-a-dentist/book-a-session/', element: <BookASession /> },
 ];
 
 export default generalRoutes;

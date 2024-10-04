@@ -1,10 +1,9 @@
 import BrandLogo from '@/components/BrandLogo';
 import GoBackBtn from '@/components/GoBackBtn';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import map from '@/assets/map.png';
 
 const ViewDentist = () => {
-  const { id } = useParams();
   return (
     <main className='bg-Grey4 py-10 '>
       <section className='container '>
@@ -17,7 +16,10 @@ const ViewDentist = () => {
 
         <div className='flex items-center justify-between mb-3'>
           <h4>Dentist Profile</h4>
-          <Link to={`/book-a-session/${id}`} className='main-btn'>
+          <Link
+            to={`/guest/find-a-dentist/book-a-session/`}
+            className='main-btn'
+          >
             Book a session
           </Link>
         </div>
