@@ -55,7 +55,6 @@ const FormInput = ({
   required,
   disabled,
   defaultValue,
-  DateTimeValue,
   error,
   selectOptions,
   keyPropertyName,
@@ -222,7 +221,9 @@ const FormInput = ({
           name={name}
           className={`${error ? 'errors' : ''} !flex form-controls mb-3`}
           onChange={handleTimeChange}
-          defaultValue={dayjs(DateTimeValue || '00:00:00', 'HH:mm:ss')}
+          defaultValue={
+            defaultValue ? dayjs(defaultValue || '00:00:00', 'HH:mm:ss') : null
+          }
           placeholder={placeholder}
           needConfirm={false}
           disabled={disabled}

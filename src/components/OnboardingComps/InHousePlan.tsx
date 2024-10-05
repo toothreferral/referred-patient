@@ -7,7 +7,7 @@ import { FieldArray, FormikProvider, useFormik } from 'formik';
 // import { useGlobalHooks } from '@/Hooks/globalHooks';
 // import ErrorMessage from '../ErrorMessage';
 import { BsTrash3 } from 'react-icons/bs';
-import PlanCard from './PlanCard';
+import PlanCard from '../DashboardComps/GuestElements/BookASessionSteps/PlanCard';
 import { useGlobalHooks } from '@/Hooks/globalHooks';
 import { useAppSelector } from '@/Redux/reduxHooks';
 import { selectGlobal } from '@/Redux/Features/globalSlice';

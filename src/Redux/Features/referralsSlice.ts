@@ -8,6 +8,7 @@ const initialState = {
     referralsInfo: {} as IReferrals,
     patientContactInfo: {} as IPatientContact,
     chart: [] as string[],
+    bookingData: {} as { date: string; timeFrom: string; timeTo: string },
   },
 };
 
@@ -18,6 +19,13 @@ const referralsSlice = createSlice({
     updateReferaalInfo: (state, action) => {
       state.referralStepForm.referralsInfo = {
         ...state.referralStepForm.referralsInfo,
+        ...action.payload,
+      };
+    },
+
+    updateBookingData: (state, action) => {
+      state.referralStepForm.bookingData = {
+        ...state.referralStepForm.bookingData,
         ...action.payload,
       };
     },
@@ -34,8 +42,12 @@ const referralsSlice = createSlice({
   },
 });
 
-export const { updateReferaalInfo, updatePatientContactInfo, updateChart } =
-  referralsSlice.actions;
+export const {
+  updateReferaalInfo,
+  updateBookingData,
+  updatePatientContactInfo,
+  updateChart,
+} = referralsSlice.actions;
 
 export const SelectReferralsStepperForms = (state: RootState) =>
   state.referralsSlice.referralStepForm;

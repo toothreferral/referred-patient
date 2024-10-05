@@ -4,7 +4,7 @@ import BookingStepForm from '@/components/DashboardComps/GuestElements/BookASess
 
 const BookASession = () => {
   return (
-    <main className='bg-Grey4 py-10 '>
+    <main className='bg-Grey4 py-10 min-h-screen '>
       <section className='container '>
         <header className='flex items-center justify-between mb-6'>
           <GoBackBtn />

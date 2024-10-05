@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { FieldArray, FormikProvider, useFormik } from 'formik';
 import { BsTrash3 } from 'react-icons/bs';
 import { useGlobalHooks } from '@/Hooks/globalHooks';
-import PlanCard from '@/components/OnboardingComps/PlanCard';
+import PlanCard from '@/components/DashboardComps/GuestElements/BookASessionSteps/PlanCard';
 import GoBackBtn from '@/components/GoBackBtn';
 
 const initialState = {

@@ -2,10 +2,11 @@ import BrandLogo from '@/components/BrandLogo';
 import GoBackBtn from '@/components/GoBackBtn';
 import { Link } from 'react-router-dom';
 import map from '@/assets/map.png';
+import doc1 from '@/assets/doc1.png';
 
 const ViewDentist = () => {
   return (
-    <main className='bg-Grey4 py-10 '>
+    <main className='bg-white py-10 '>
       <section className='container '>
         <header className='flex items-center justify-between'>
           <GoBackBtn />
@@ -17,16 +18,23 @@ const ViewDentist = () => {
         <div className='flex items-center justify-between mb-3'>
           <h4>Dentist Profile</h4>
           <Link
-            to={`/guest/find-a-dentist/book-a-session/`}
+            to={`/guest/find-a-dentist/book-a-session`}
             className='main-btn'
           >
             Book a session
           </Link>
         </div>
         <hr />
-        <section className='mt-6 flex flex-wrap gap-5'>
+        <section className='mt-6 flex flex-wrap gap-5 items-center'>
           <ul className='w-full lg:w-[47%] space-y-5'>
             {' '}
+            <li className='card   text-center space-y-2 py-10 mt-10 bg-Grey4 border-Grey6'>
+              <figure className='size-28 rounded-full overflow-hidden -mt-20 mx-auto'>
+                <img src={doc1} alt='' />
+              </figure>
+              <h5 className='font-bold'>Dr. Darrell Steward</h5>
+              <p className='text-Grey6'>34 years, Delaware</p>
+            </li>
             <li className='card overflow-hidden  '>
               <div className='flex items-center gap-5 bg-PaleSky py-2 px-4'>
                 <h5 className='font-semibold text-white'>

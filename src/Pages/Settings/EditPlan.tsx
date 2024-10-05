@@ -2,7 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import FormInput from '@/components/FormInput';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import PlanCard from '@/components/OnboardingComps/PlanCard';
+import PlanCard from '@/components/DashboardComps/GuestElements/BookASessionSteps/PlanCard';
 import GoBackBtn from '@/components/GoBackBtn';
 import { useEffect } from 'react';
 import { subPlanData } from '@/components/AllData';

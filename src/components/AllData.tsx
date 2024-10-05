@@ -43,7 +43,7 @@ import { CiEdit } from 'react-icons/ci';
 import PersonalInfo from './DashboardComps/SettingsElements/PersonalInfo';
 import PracticeInfo from './DashboardComps/SettingsElements/PracticeInfo';
 import OfficeInfo from './DashboardComps/SettingsElements/OfficeInfo';
-import InHouseDentalPlan from './DashboardComps/SettingsElements/InHouseDentalPlan';
+import InHouseDentalPlan from './DashboardComps/GuestElements/BookASessionSteps/InHouseDentalPlan';
 import Security from './DashboardComps/SettingsElements/Security';
 import UserRoles from './DashboardComps/SettingsElements/UserRoles';
 import ContactSupport from './DashboardComps/SettingsElements/ContactSupport';

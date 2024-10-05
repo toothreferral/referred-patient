@@ -75,7 +75,7 @@ const DentistCard: FC<IDocCard> = ({
             View Profile
           </Link>
           <Link
-            to={`/book-a-session/${id}`}
+            to={`/guest/find-a-dentist/book-a-session`}
             className='flex justify-center gap-1 rounded-[48px] text-center !bg-pryColor text-white font-semibold py-2 w-[47%]'
           >
             Schedule now
